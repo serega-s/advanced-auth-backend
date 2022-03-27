@@ -13,8 +13,10 @@ import { UserRoles } from "src/roles/user-roles.model"
 import { User } from "src/users/users.model"
 
 interface PostCreationAttrs {
-  email: string
-  password: string
+  title: string
+  content: string
+  userId: number
+  image: string
 }
 
 @Table({ tableName: "users" })
@@ -40,8 +42,9 @@ export class Post extends Model<Post, PostCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   image: string
 
+  @ApiProperty({ example: "1", description: "User ID" })
   @ForeignKey(() => User)
-  @Column({type: DataType.INTEGER})
+  @Column({ type: DataType.INTEGER })
   userId: number
 
   @BelongsTo(() => User)
