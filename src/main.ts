@@ -10,7 +10,7 @@ async function start() {
   // Swagger settings
   const config = new DocumentBuilder()
     .setTitle("API for advanced backend")
-    .setDescription("Documentating REST API")
+    .setDescription("Documenting REST API")
     .setVersion("1.0.0")
     .addTag("API")
     .build()
